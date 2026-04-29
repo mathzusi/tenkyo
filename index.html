@@ -44,7 +44,7 @@ header{
     background:#ffc60c;
     border:none;
     color:white;
-    padding:17px;
+    padding:14px;
     font-size:24px;
     font-weight:bold;
     text-align:left;
@@ -68,7 +68,7 @@ header{
     border:none;
     border-top:2px solid #179edc;
     color:white;
-    padding:11px 22px;
+    padding:7px 22px;
     font-size:16px;
     text-align:left;
     cursor:pointer;
@@ -117,13 +117,17 @@ header{
 /* ヒント内容 */
 .ヒント内容{
     display:none;
-    padding:10px;
+    padding:7px;
     background:#ffffff;
     border-top:2px solid #179edc;
     line-height:1.9;
     color:#295b98;
 }
 
+/* 常に表示するヒント */
+.固定ヒント{
+    display:block;
+}
 
 </style>
 
@@ -180,20 +184,40 @@ header{
 
     </div>
 
-        <button class="ヒントボタン" onclick="toggleSection(this, 'hint2')">
-            <span>ヒント2</span>
+       <button class="ヒントボタン" onclick="toggleSection(this, 'hint2')">
+    <span>ヒント2</span>
+    <span class="矢印">▶</span>
+</button>
+
+<div class="ヒント内容 ネストヒント" id="hint2">
+
+    <div class="ヒント内容 固定ヒント">
+        赤・青・黄の順番が重要です。
+    </div>
+
+    <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint2_1')">
+
+            <span>追加ヒント</span>
             <span class="矢印">▶</span>
+
         </button>
 
-        <div class="ヒント内容" id="hint2">
-            赤・青・黄の順番が重要です。
-        </div>
+    </div>
 
+    <div class="ヒント内容 右ヒント内容" id="hint2_1">
+        信号機をイメージしてください。
     </div>
 
 </div>
 
-<!-- 第2の謎 -->
+</div>
+
+</div>
+
+<!-- 調査の謎 -->
 <div class="カード">
 
     <button class="メインボタン" onclick="toggleSection(this, 'nazo2')">
@@ -372,7 +396,7 @@ function toggleSection(button, id){
         button.classList.remove("open");
 
         /* 中のヒントも全部閉じる */
-        const openedHints = content.querySelectorAll('.ヒント内容, .セクションエリア');
+        const openedHints = content.querySelectorAll('.ヒント内容:not(.固定ヒント), .セクションエリア');
 
         openedHints.forEach(function(item){
             item.style.display = "none";
