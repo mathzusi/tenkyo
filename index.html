@@ -129,6 +129,17 @@ header{
     display:block;
 }
 
+/* ヘッダー画像 */
+.ヘッダー画像{
+    width:160px;
+    height:80px;
+
+    vertical-align:middle;
+
+    margin-right:10px;
+}
+
+
 </style>
 
 </head>
@@ -136,63 +147,40 @@ header{
 <body>
 
 <header>
-天気ョ ヒントサイト
+    <img src="天気ョロゴ.png" class="ヘッダー画像">
+    ヒントサイト
 </header>
 
 <div class="container">
 
-<!-- 第1の謎 -->
+<!-- 調査の進め方 -->
 <div class="カード">
 
     <button class="メインボタン" onclick="toggleSection(this, 'nazo1')">
-        <span>第1の謎</span>
+        <span>調査の進め方</span>
         <span class="矢印">▶</span>
     </button>
 
     <div class="セクションエリア" id="nazo1">
 
         <button class="ヒントボタン" onclick="toggleSection(this, 'hint1')">
-            <span>ヒント1</span>
+            <span>何をしたら良いか</span>
             <span class="矢印">▶</span>
         </button>
 
-    <div class="ヒント内容 ネストヒント" id="hint1">
-
-        <div class="右ヒント枠">
-
-        <button class="ヒントボタン 右ヒントボタン" onclick="toggleSection(this, 'hint1_1')">
-             <span>ヒント1-1</span>
-             <span class="矢印">▶</span>
-        </button>
-        
-        <div class="ヒント内容" id="hint1_1">
-            色に注目してみましょう。
+        <div class="ヒント内容" id="hint1">
+            投稿と手元の地図と見比べて、その地点にある物を推測して謎を解きましょう。
         </div>
 
+    <button class="ヒントボタン" onclick="toggleSection(this, 'hint2')">
+        <span>投稿を見る方法</span>
+        <span class="矢印">▶</span>
+     </button>
 
-        <button class="ヒントボタン" onclick="toggleSection(this, 'hint1_2')">
-            <span>ヒント1-2</span>
-            <span class="矢印">▶</span>
-        </button>
-
-
-        <div class="ヒント内容" id="hint1_2">
-            特に赤色が重要です。
-        </div>
-
-        </div>
-
-    </div>
-
-       <button class="ヒントボタン" onclick="toggleSection(this, 'hint2')">
-    <span>ヒント2</span>
-    <span class="矢印">▶</span>
-</button>
-
-<div class="ヒント内容 ネストヒント" id="hint2">
+        <div class="ヒント内容 ネストヒント" id="hint2">
 
     <div class="ヒント内容 固定ヒント">
-        赤・青・黄の順番が重要です。
+        (説明画像)
     </div>
 
     <div class="右ヒント枠">
@@ -200,7 +188,7 @@ header{
         <button class="ヒントボタン 右ヒントボタン"
         onclick="toggleSection(this, 'hint2_1')">
 
-            <span>追加ヒント</span>
+            <span>それでも見られない</span>
             <span class="矢印">▶</span>
 
         </button>
@@ -208,13 +196,14 @@ header{
     </div>
 
     <div class="ヒント内容 右ヒント内容" id="hint2_1">
-        信号機をイメージしてください。
+        国・地域による利用制限、一時的なバグなどの原因によって、VOOM投稿が
+        見られない場合があります。<br>
+        その場合は、「投稿1」〜「投稿6」をLINEに送信してください。<br>
+        同じ投稿を見ることができます。
     </div>
 
 </div>
-
 </div>
-
 </div>
 
 <!-- 調査の謎 -->
@@ -247,7 +236,7 @@ header{
     </div>
 
     <div class="ヒント内容 右ヒント内容" id="hint3_1">
-        7:05の投稿の1枚目がA地点と一致しているようです
+        投稿②の1枚目がA地点と一致しているようです。
     </div>
 
     <div class="右ヒント枠">
@@ -262,9 +251,10 @@ header{
 
         </div>
 
-        <div class="ヒント内容 右ヒント内容" id="hint3_2">
-            背景の建物の形に注目してください
-        </div>
+     <div class="ヒント内容 右ヒント内容" id="hint3_2">
+        投稿にある、「郵便物を出してきた」という文と、謎にある「入れる」という言葉に着目して、
+        とある赤い物を連想してみましょう。
+    </div>
 
         <div class="右ヒント枠">
 
@@ -278,9 +268,12 @@ header{
 
         </div>
 
-        <div class="ヒント内容 右ヒント内容" id="hint3_3">
-        時計台の近くの場所です
-        </div>
+     <div class="ヒント内容 右ヒント内容" id="hint3_3">
+        そこにある物は、”ポスト”です。<br>
+        ポストの側面にある一文字はカタカナです。ポストの見た目を想像してみましょう。<br>
+        「入れる物」はポストに入れる物を指しています。
+
+    </div>
 
         </div>
 
@@ -304,7 +297,7 @@ header{
     </div>
 
     <div class="ヒント内容 右ヒント内容" id="hint4_1">
-        7:00の投稿の写真がB地点と一致しているようです
+        投稿①がB地点と一致しているようです。
     </div>
 
     <div class="右ヒント枠">
@@ -319,9 +312,9 @@ header{
 
         </div>
 
-        <div class="ヒント内容 右ヒント内容" id="hint4_2">
-            背景の建物の形に注目してください
-        </div>
+    <div class="ヒント内容 右ヒント内容" id="hint4_2">
+        謎と投稿の写真を見比べ、空欄に文字を当てはめましょう。
+    </div>
 
         <div class="右ヒント枠">
 
@@ -335,52 +328,641 @@ header{
 
         </div>
 
-        <div class="ヒント内容 右ヒント内容" id="hint4_3">
-        時計台の近くの場所です
-        </div>
-
-        </div>
-
-        <button class="ヒントボタン" onclick="toggleSection(this, 'hint5')">
-            <span>地点C</span>
-            <span class="矢印">▶</span>
-        </button>
-
-        <div class="ヒント内容" id="hint5">
-            最後の文字から読むと意味が通ります。
-        </div>
-
-        <button class="ヒントボタン" onclick="toggleSection(this, 'hint6')">
-            <span>地点D</span>
-            <span class="矢印">▶</span>
-        </button>
-
-        <div class="ヒント内容" id="hint6">
-            最後の文字から読むと意味が通ります。
-        </div>
-
-        <button class="ヒントボタン" onclick="toggleSection(this, 'hint7')">
-            <span>地点E</span>
-            <span class="矢印">▶</span>
-        </button>
-
-        <div class="ヒント内容" id="hint7">
-            最後の文字から読むと意味が通ります。
-        </div>
-
-        <button class="ヒントボタン" onclick="toggleSection(this, 'hint8')">
-            <span>地点F</span>
-            <span class="矢印">▶</span>
-        </button>
-
-        <div class="ヒント内容" id="hint8">
-            最後の文字から読むと意味が通ります。
-        </div>
-
+    <div class="ヒント内容 右ヒント内容" id="hint4_3">
+        写真に写っている場所の、壁にある物と地面にある物を埋めましょう。<br>
+        水色の空欄の4文字は共通しているようです。
+    </div>
 
     </div>
 
+        <button class="ヒントボタン" onclick="toggleSection(this, 'hint5')">
+        <span>地点C</span>
+        <span class="矢印">▶</span>
+    </button>
+
+        <div class="ヒント内容 ネストヒント" id="hint5">
+
+        <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint5_1')">
+
+            <span>C-1</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+    </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint5_1">
+        投稿③の3つ目に着目してみましょう。
+    </div>
+
+    <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint5_2')">
+
+            <span>C-2</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+        </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint5_2">
+        画像にあるP地点から南に突き当たりに行くと、C地点の場所になります。<br>
+        つまりC地点にはパーキングがあるようです。
+    </div>
+
+        <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint5_3')">
+
+            <span>C-3</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+        </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint5_3">
+        緑と赤の四角にはそれぞれ漢字一字が入ります。<br>
+        黄色の矢印は切り替わることを表していそうです。<br>
+        それを踏まえてパーキングにある物を考えてみましょう。
+    </div>
+    
+
+    </div>
+
+        <button class="ヒントボタン" onclick="toggleSection(this, 'hint6')">
+        <span>地点D</span>
+        <span class="矢印">▶</span>
+    </button>
+
+        <div class="ヒント内容 ネストヒント" id="hint6">
+
+        <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint6_1')">
+
+            <span>D-1</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+    </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint6_1">
+        投稿⑤の3つ目に着目してみましょう。
+    </div>
+
+    <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint6_2')">
+
+            <span>D-2</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+        </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint6_2">
+        調査地点Iに北向きで行くことを考えると、途中の公園の角のT字路にはD地点があります。<br>
+        つまりD地点には信号があるようです。
+    </div>
+
+        <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint6_3')">
+
+            <span>D-3</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+        </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint6_3">
+        信号機には3つの色があります。<br>
+        その色を信号機に並んだ向きと同じように入れられないでしょうか。<br>
+        「使われている物」は信号機に使われている物を指しています。
+    </div>
+
+     </div>
+        <button class="ヒントボタン" onclick="toggleSection(this, 'hint7')">
+        <span>地点E</span>
+        <span class="矢印">▶</span>
+    </button>
+
+        <div class="ヒント内容 ネストヒント" id="hint7">
+
+        <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint7_1')">
+
+            <span>E-1</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+    </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint7_1">
+        投稿②の2枚目がE地点と一致しているようです。
+    </div>
+
+    <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint7_2')">
+
+            <span>E-2</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+        </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint7_2">
+        背景の建物の形に注目してください
+    </div>
+
+        <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint7_3')">
+
+            <span>E-3</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+        </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint7_3">
+        時計台の近くの場所です
+    </div>
+    </div>
+    
+    <button class="ヒントボタン" onclick="toggleSection(this, 'hint8')">
+        <span>地点F</span>
+        <span class="矢印">▶</span>
+    </button>
+
+        <div class="ヒント内容 ネストヒント" id="hint8">
+
+        <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint8_1')">
+
+            <span>F-1</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+    </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint8_1">
+        投稿⑤の1枚目がF地点と一致しているようです。
+    </div>
+
+    <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint8_2')">
+
+            <span>F-2</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+        </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint8_2">
+        背景の建物の形に注目してください
+    </div>
+
+        <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint8_3')">
+
+            <span>F-3</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+        </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint8_3">
+        時計台の近くの場所です
+    </div>
+
+    </div>
+    
+        <button class="ヒントボタン" onclick="toggleSection(this, 'hint9')">
+        <span>調査まとめ</span>
+        <span class="矢印">▶</span>
+    </button>
+
+        <div class="ヒント内容 ネストヒント" id="hint9">
+
+        <div class="右ヒント枠">
+
+    <button class="ヒントボタン 右ヒントボタン"onclick="toggleSection(this, 'hint9_1')">
+
+            <span>まとめ1</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+    </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint9_1">
+        投稿④の画像を利用し、各地点の天気を特定しましょう。
+    </div>
+
+    <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint9_2')">
+
+            <span>まとめ2</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+        </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint9_2">
+        天気記号がわからない場合は、検索を利用しましょう。
+    </div>
+
+        <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint9_3')">
+
+            <span>まとめ3</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+        </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint9_3">
+        時計台の近くの場所です
+    </div>
+
 </div>
+</div>
+</div>
+
+<!-- 調査終了後-->
+<div class="カード">
+
+    <button class="メインボタン" onclick="toggleSection(this, 'nazo3')">
+        <span>調査終了後</span>
+        <span class="矢印">▶</span>
+    </button>
+
+    <div class="セクションエリア" id="nazo3">
+
+    <button class="ヒントボタン" onclick="toggleSection(this, 'hint10')">
+        <span>何をしたら良いか</span>
+        <span class="矢印">▶</span>
+     </button>
+
+        <div class="ヒント内容 ネストヒント" id="hint10">
+
+    <div class="ヒント内容 固定ヒント">
+        黒い画像をタップしてみましょう。<br>
+        Xのリンクに飛ばされます。
+    </div>
+
+    <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint10_1')">
+
+            <span>Xにログインできない場合</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+    </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint10_1">
+        Xのリンクに飛ぶと、<br>
+        ⚠︎⚠︎⚠︎⚠︎⚠︎エラーが発生しました⚠︎⚠︎⚠︎⚠︎⚠︎<br>
+        このポストは投稿せずに、LINEに戻って「エラー発生」と送信してください<br>
+        と表示されます。
+    </div>
+    </div>
+
+    <button class="ヒントボタン" onclick="toggleSection(this, 'hint11')">
+        <span>エラーピンク</span>
+        <span class="矢印">▶</span>
+    </button>
+
+        <div class="ヒント内容 ネストヒント" id="hint11">
+
+        <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint11_1')">
+
+            <span>ピンク1</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+    </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint11_1">
+        投稿⑤の1枚目がF地点と一致しているようです。
+    </div>
+
+    <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint11_2')">
+
+            <span>ピンク2</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+        </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint11_2">
+        背景の建物の形に注目してください
+    </div>
+
+        <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint11_3')">
+
+            <span>ピンク3</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+        </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint11_3">
+        時計台の近くの場所です
+    </div>
+    </div>
+
+    <button class="ヒントボタン" onclick="toggleSection(this, 'hint12')">
+        <span>エラーイエロー</span>
+        <span class="矢印">▶</span>
+    </button>
+
+        <div class="ヒント内容 ネストヒント" id="hint12">
+
+        <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint12_1')">
+
+            <span>イエロー1</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+    </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint12_1">
+        投稿⑤の1枚目がF地点と一致しているようです。
+    </div>
+
+    <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint12_2')">
+
+            <span>イエロー2</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+        </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint12_2">
+        背景の建物の形に注目してください
+    </div>
+
+        <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint12_3')">
+
+            <span>イエロー3</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+        </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint12_3">
+        時計台の近くの場所です
+    </div>
+    </div>
+
+    <button class="ヒントボタン" onclick="toggleSection(this, 'hint13')">
+        <span>エラーグリーン</span>
+        <span class="矢印">▶</span>
+    </button>
+
+        <div class="ヒント内容 ネストヒント" id="hint13">
+
+        <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint13_1')">
+
+            <span>グリーン1</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+    </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint13_1">
+        投稿⑤の1枚目がF地点と一致しているようです。
+    </div>
+
+    <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint13_2')">
+
+            <span>グリーン2</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+        </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint13_2">
+        背景の建物の形に注目してください
+    </div>
+
+        <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint13_3')">
+
+            <span>グリーン3</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+        </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint13_3">
+        時計台の近くの場所です
+    </div>
+    </div>
+
+    <button class="ヒントボタン" onclick="toggleSection(this, 'hint14')">
+        <span>エラーブルー</span>
+        <span class="矢印">▶</span>
+    </button>
+
+    <div class="ヒント内容 ネストヒント" id="hint14">
+
+
+    <button class="ヒントボタン"
+        onclick="toggleSection(this, 'hint14_1')">
+
+            <span>表を見たい</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+    <div class="ヒント内容 ネストヒント" id="hint14_1">
+
+    <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint14_1_1')">
+
+            <span>見る前1</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+    </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint14_1_1">
+        追加ヒントです。
+    </div>
+
+    <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint14_1_2')">
+
+            <span>見る前2</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+    </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint14_1_2">
+        さらに追加ヒントです。
+    </div>
+
+    <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint14_1_3')">
+
+            <span>見る前3</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+    </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint14_1_3">
+        さらにもっと詳しいヒントです。
+    </div>
+    </div>
+
+    <button class="ヒントボタン"
+        onclick="toggleSection(this, 'hint14_2')">
+
+            <span>表を見た後</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+
+    <div class="ヒント内容 ネストヒント" id="hint14_2">
+
+    <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint14_2_1')">
+
+            <span>見た後1</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+    </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint14_2_1">
+        追加ヒントです。
+    </div>
+
+    <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint14_2_2')">
+
+            <span>見た後2</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+    </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint14_2_2">
+        さらに追加ヒントです。
+    </div>
+
+    <div class="右ヒント枠">
+
+        <button class="ヒントボタン 右ヒントボタン"
+        onclick="toggleSection(this, 'hint14_2_3')">
+
+            <span>見た後3</span>
+            <span class="矢印">▶</span>
+
+        </button>
+
+    </div>
+
+    <div class="ヒント内容 右ヒント内容" id="hint14_2_3">
+        さらにもっと詳しいヒントです。
+    </div>
+
+    </div>
 
 </div>
 
